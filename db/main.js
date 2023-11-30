@@ -19,7 +19,7 @@ const monthNames = [
 ];
 
 async function connectDB() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/reminder', {
+  await mongoose.connect('mongodb://127.0.0.1:27017/rem', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     dbName: process.env.DB_NAME,
@@ -71,8 +71,7 @@ async function getReminderById(reminderId) {
     const reminder = await reminderModel.findById(reminderId);
     return reminder;
   } catch (error) {
-    // Log the error for debugging
-    console.error("Error in getReminderById:", error);
+       console.error("Error in getReminderById:", error);
     throw error;
   }
 }
